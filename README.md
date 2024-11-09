@@ -60,7 +60,7 @@ recursive_hash_scan "$directory_to_scan"
 Запускаем фаззинг
 ![image](https://github.com/user-attachments/assets/8b960d7c-9d9b-452a-a489-748f5e665bc8)
 
-minivim не принимает открывает текстовые файлы корректно )
+minivim работает не корректно!
 
 берем другой проект ( текстовый редактор kilo ) 
 https://github.com/antirez/kilo/tree/master
