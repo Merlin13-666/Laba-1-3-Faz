@@ -93,5 +93,6 @@ Cоздаем тестовые файлы для входа (корпуса)
 
 Получим покрытие 
 ![image](https://github.com/user-attachments/assets/c2d94093-6d98-45c2-bcec-2661239800f1)
+![image](https://github.com/user-attachments/assets/ab6660b7-ea9e-4b3e-826a-aad1c20586d0)
 
 
