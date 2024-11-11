@@ -43,43 +43,42 @@ recursive_hash_scan "$directory_to_scan"
 ![image](https://github.com/user-attachments/assets/240d7976-a420-41e1-bc3c-f5285133725d)
 
 
-Для фаззинга был выбран проект git clone https://github.com/SJTUJohnClass/Minivim.git
+Для фаззинга был выбран проект  https://github.com/elzoughby/Base64.git
 
 Скопируем с репозитория 
-![image](https://github.com/user-attachments/assets/f8420e85-849e-4c79-af9c-4ab0c8795f86)
+git clone https://github.com/elzoughby/Base64.git
 
 
 Теперь пересоберем проект с afl-gcc
-![image](https://github.com/user-attachments/assets/8ffb994d-c53e-4e96-9345-e40a5f73e57c)
 
-Собираем проект с помощью make
-![image](https://github.com/user-attachments/assets/b5331102-54c3-469e-a335-a3bba6cb0fab)
+mkdir build 
+cd build 
+CC=/home/danya/AFLplusplus/afl-gcc CXX=/home/danya/AFLplusplus/afl-g++ cmake ..
+CC=/home/danya/AFLplusplus/afl-gcc CXX=/home/danya/AFLplusplus/afl-g++ cmake  -- build . 
+
+![изображение](https://github.com/user-attachments/assets/a0951a81-88e5-442f-8f08-9a2b0a415eb1)
+
+![изображение](https://github.com/user-attachments/assets/8b07f653-1d96-4a6a-aadb-cb1bebebdf36)
+
 
 Создадим корпус
 ![image](https://github.com/user-attachments/assets/72442c10-547f-4866-94ff-f43e4f157759)
+
 Запускаем фаззинг
-![image](https://github.com/user-attachments/assets/8b960d7c-9d9b-452a-a489-748f5e665bc8)
+~/AFLplusplus/afl-fuzz  -i /home/danya/dir -o /home/danya/out -- ./Base64 decode @@
 
-minivim работает не корректно!
+![изображение](https://github.com/user-attachments/assets/271139f8-acdc-4785-bdff-e8fe0fdcfa8b)
 
-берем другой проект ( текстовый редактор kilo ) 
-https://github.com/antirez/kilo/tree/master
+![изображение](https://github.com/user-attachments/assets/889e458f-5a07-4188-950e-507a77705592)
 
-собираем проект для фаззинга 
-![image](https://github.com/user-attachments/assets/2de835c9-4843-4890-8dfb-6af5b8d6372b)
+Посмотрим результаты работы находятся в папке ~/out/default/
+![изображение](https://github.com/user-attachments/assets/cd94f9db-530b-44ec-aea2-f533da1a6383)
 
-Cоздаем тестовые файлы для входа (корпуса)
-![image](https://github.com/user-attachments/assets/633013d5-eb43-457c-9873-e411dd9ff32b)
+Выведем статистику
 
-Запускаем проект
-![image](https://github.com/user-attachments/assets/d00399e4-5d63-4a30-ba1f-8fd664ec8f24)
-![image](https://github.com/user-attachments/assets/f8c1c540-8123-4a4d-b091-56fd351d38a9)
+![изображение](https://github.com/user-attachments/assets/e1cd49b4-f30a-4fd1-851b-b8f74a5f18e6)
 
-все итоги работы фаззинга записаны в файл outdd
-![image](https://github.com/user-attachments/assets/e15088f4-af59-4a2e-aaa1-c6f0ea28387f)
 
-Результаты проведенного фаззинга можно посмотреть 
-![image](https://github.com/user-attachments/assets/6ca95156-d2db-4124-a6f9-fae52bfb7cc9)
 
 ## Лабораторная работа 3 
 установим утилиту 
