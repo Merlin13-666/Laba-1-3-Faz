@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Функция для вычисления хэша файла
+calculate_hash() {
+    local file_path=$1
+    if [[ -f "$file_path" ]]; then
+        sha256sum "$file_path" | awk '{print $1}'
+    else
+        echo "Ошибка: Файл $file_path не найден или недоступен"
+    fi
+}
+
+# Рекурсивное сканирование директории
+recursive_hash_scan() {
+    local directory=$1
+    find "$directory" -type f | while read -r file; do
+        file_hash=$(calculate_hash "$file")
+        if [[ -n "$file_hash" ]]; then
+            echo "Файл: $file | Хэш: $file_hash"
+        fi
+    done
+}
+
+# Пример использования
+read -p "Введите путь к директории для сканирования: " directory_to_scan
+recursive_hash_scan "$directory_to_scan"
+
