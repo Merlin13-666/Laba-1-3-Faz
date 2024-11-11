@@ -61,15 +61,18 @@ CC=/home/danya/AFLplusplus/afl-gcc CXX=/home/danya/AFLplusplus/afl-g++ cmake  --
 ![изображение](https://github.com/user-attachments/assets/8b07f653-1d96-4a6a-aadb-cb1bebebdf36)
 
 
-Создадим корпус
-![image](https://github.com/user-attachments/assets/72442c10-547f-4866-94ff-f43e4f157759)
+Создадим корпуса
+
+![изображение](https://github.com/user-attachments/assets/791ffbf6-602e-4a41-9b3e-fd87eb0a8e73)
+
 
 Запускаем фаззинг
 ~/AFLplusplus/afl-fuzz  -i /home/danya/dir -o /home/danya/out -- ./Base64 decode @@
 
 ![изображение](https://github.com/user-attachments/assets/271139f8-acdc-4785-bdff-e8fe0fdcfa8b)
 
-![изображение](https://github.com/user-attachments/assets/889e458f-5a07-4188-950e-507a77705592)
+![изображение](https://github.com/user-attachments/assets/115bd0a2-b061-4d4a-8af6-2c930791ad0d)
+
 
 Посмотрим результаты работы находятся в папке ~/out/default/
 ![изображение](https://github.com/user-attachments/assets/cd94f9db-530b-44ec-aea2-f533da1a6383)
