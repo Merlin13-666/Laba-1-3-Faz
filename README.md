@@ -136,15 +136,16 @@ recursive_hash_scan "$directory_to_scan"
 Для фаззинга был выбран проект  https://github.com/elzoughby/Base64.git
 
 Скопируем с репозитория 
+
 ```git clone https://github.com/elzoughby/Base64.git```
 
 
 Теперь пересоберем проект с afl-gcc
 
-```mkdir build 
-cd build 
-CC=/home/danya/AFLplusplus/afl-gcc CXX=/home/danya/AFLplusplus/afl-g++ cmake ..
-CC=/home/danya/AFLplusplus/afl-gcc CXX=/home/danya/AFLplusplus/afl-g++ cmake  -- build . ```
+```mkdir build```
+```cd build``` 
+```CC=/home/danya/AFLplusplus/afl-gcc CXX=/home/danya/AFLplusplus/afl-g++ cmake .. ```
+```CC=/home/danya/AFLplusplus/afl-gcc CXX=/home/danya/AFLplusplus/afl-g++ cmake  -- build . ```
 
 ![изображение](https://github.com/user-attachments/assets/a0951a81-88e5-442f-8f08-9a2b0a415eb1)
 
@@ -157,7 +158,7 @@ CC=/home/danya/AFLplusplus/afl-gcc CXX=/home/danya/AFLplusplus/afl-g++ cmake  --
 
 
 Запускаем фаззинг
-~/AFLplusplus/afl-fuzz  -i /home/danya/dir -o /home/danya/out -- ./Base64 decode @@
+```~/AFLplusplus/afl-fuzz  -i /home/danya/dir -o /home/danya/out -- ./Base64 decode @@```
 
 ![изображение](https://github.com/user-attachments/assets/271139f8-acdc-4785-bdff-e8fe0fdcfa8b)
 
@@ -165,6 +166,7 @@ CC=/home/danya/AFLplusplus/afl-gcc CXX=/home/danya/AFLplusplus/afl-g++ cmake  --
 
 
 Посмотрим результаты работы находятся в папке ~/out/default/
+
 ![изображение](https://github.com/user-attachments/assets/cd94f9db-530b-44ec-aea2-f533da1a6383)
 
 Выведем статистику
