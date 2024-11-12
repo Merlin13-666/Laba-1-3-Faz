@@ -281,7 +281,7 @@ eb5ae3cd6fa9fc42d894d808da808534f853d86c0c835680c9d33092f3c687ff
 
 ![image](https://github.com/user-attachments/assets/92ab2b9d-149c-4cce-a7d4-12469758f184)
 
-Пересоберем покрытие:
+Пересоберем проект для покрытия:
 
 ```
 CC="gcc --coverage" CXX="g++ --coverage" cmake ..
